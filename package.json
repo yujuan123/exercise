@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jasmine",
-    "start": "babel-node server.js",
+    "start": "babel-node app.js",
     "webpack": "webpack",
     "wpw": "webpack -w",
     "coverage": "istanbul cover jasmine"
