@@ -18,3 +18,5 @@ app.get('/demo', (res, req)=> {
 app.listen(3000, function() {
   console.log("server started at http://localhost:3000");
 });
+
+export default app;
