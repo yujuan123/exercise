@@ -3,8 +3,8 @@ var webpack = require("webpack");
 
 module.exports = {
   entry: {
-    vendor: ["webpack-hot-middleware/client", "react", "react-dom", "./node_modules/bootstrap/dist/css/bootstrap.css"],
-    index: ["./public/src/main", "./public/style/index.css"]
+    vendor: ["react", "react-dom", "./node_modules/bootstrap/dist/css/bootstrap.css"],
+    index: ["./public/src/index", "./public/style/index.css"]
   },
   output: {
     path: require('path').resolve("./public/dist"),
@@ -17,7 +17,7 @@ module.exports = {
         loader: 'babel',
         exclude: /node_modules/,
         query: {
-          presets: ['es2015', 'react' /* , 'react-hmre' */]
+          presets: ['es2015', 'react']
         }
       },
       {
@@ -32,9 +32,6 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin("[name].css"),
-    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js"),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js")
   ]
 };

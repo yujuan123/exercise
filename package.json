@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "babel-node server.js",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "wpw": "webpack -w"
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +18,8 @@
     "bootstrap": "^3.3.7",
     "express": "^4.14.0",
     "react": "^15.3.0",
-    "react-dom": "^15.3.0"
+    "react-dom": "^15.3.0",
+    "superagent": "^2.1.0"
   },
   "devDependencies": {
     "babel-loader": "^6.2.4",
