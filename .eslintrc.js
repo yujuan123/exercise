@@ -23,7 +23,7 @@ module.exports = {
         ],
         "complexity": [
             "error",
-            2
+            3
         ],
         "linebreak-style": [
             "error",

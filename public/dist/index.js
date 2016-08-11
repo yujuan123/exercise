@@ -4,7 +4,7 @@ webpackJsonp([0],{
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
-	module.exports = __webpack_require__(182);
+	module.exports = __webpack_require__(177);
 
 
 /***/ },
@@ -132,7 +132,7 @@ webpackJsonp([0],{
 	            _react2.default.createElement(
 	              "button",
 	              { onClick: this.handleClick.bind(this), type: "button", className: "btn btn-default" },
-	              "Sign in"
+	              "Sign inn"
 	            )
 	          )
 	        )
@@ -147,7 +147,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 182:
+/***/ 177:
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

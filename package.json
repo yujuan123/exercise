@@ -8,7 +8,8 @@
     "start": "babel-node app.js",
     "webpack": "webpack",
     "wpw": "webpack -w",
-    "coverage": "istanbul cover jasmine"
+    "coverage": "istanbul cover jasmine",
+    "eslint": "eslint app.js server/** public/src/**"
   },
   "author": "",
   "license": "ISC",

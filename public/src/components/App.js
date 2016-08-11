@@ -1,9 +1,9 @@
-import React, { Component } from "react"; // eslint-disable-line no-unused-vars
+import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
 
 class App extends Component {
 
   handleClick() {
-    console.log(this.refs._email.value);
+    // console.log(this.refs._email.value);
   }
 
   render() {
@@ -33,11 +33,11 @@ class App extends Component {
           </div>
           <div className="form-group">
             <div className="col-sm-offset-2 col-sm-10">
-              <button onClick={this.handleClick.bind(this)} type="button" className="btn btn-default">Sign in</button>
+              <button onClick={this.handleClick.bind(this)} type="button" className="btn btn-default">Sign inn</button>
             </div>
           </div>
         </form>
-    )
+    );
   }
 }
 
