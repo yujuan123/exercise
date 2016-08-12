@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 class ResultList extends Component {
   render() {
-    let {result} = this.props;
+    let {result, deleteTodo} = this.props;
     
     return (
         <div className="col-sm-8 col-sm-offset-2">
@@ -11,18 +11,25 @@ class ResultList extends Component {
             <thead>
             <tr>
               <th>#</th>
-              <th>name</th>
-              <th>price</th>
+              <th>Text</th>
+              <th>Delete</th>
             </tr>
             </thead>
             <tbody>
             {
               result.map((v, k)=> {
                 return (
-                    <tr key={k}>
-                      <td>{k+1}</td>
-                      <td>{v.name}</td>
-                      <td>{v.price}</td>
+                    <tr key={v._id}>
+                      <td>{k + 1}</td>
+                      <td>{v.text}</td>
+                      <td><a
+                          href="javascript: void(0)"
+                          onClick={()=> {
+                            deleteTodo(v._id);
+                          }}
+                      >
+                        删除
+                      </a></td>
                     </tr>
                 );
               })
@@ -40,9 +47,9 @@ const mapStateToProps = (state)=> ({
 });
 
 const mapDispatchToProps = (dispatch)=> ({
-  selectLine: (id)=> {
+  deleteTodo: (id)=> {
     dispatch({
-      type: 'SELECT_LINE',
+      type: 'DELETE_TODO',
       id
     });
   }

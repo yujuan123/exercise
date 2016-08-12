@@ -11,6 +11,10 @@ const store = createStore(
     applyMiddleware(todoRequestMiddleware)
 );
 
+store.dispatch({
+  type: 'INIT'
+});
+
 render(
     <Provider store={store}>
       <App/>

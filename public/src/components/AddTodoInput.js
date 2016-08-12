@@ -7,6 +7,7 @@ class AddTodoInput extends Component {
     if (val) {
       this.props.addTodo(val);
     }
+    this.refs.todoText.value = '';
   }
 
   handleKeyPress(e) {

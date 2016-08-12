@@ -1,9 +1,8 @@
 const result = (state = [], action)=> {
+
   switch (action.type) {
-  case 'READY':
+  case 'TODO_LOADED':
     return action.data;
-  case 'INIT':
-    return [];
   }
 
   return state;
