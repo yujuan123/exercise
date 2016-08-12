@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
 
 class SearchInput extends Component {
   handleClick() {
@@ -22,8 +22,7 @@ class SearchInput extends Component {
             </div>
           </div>
         </form>
-    )
-
+    );
   }
 }
 

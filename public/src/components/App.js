@@ -1,7 +1,6 @@
 import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
 import SearchInput from './SearchInput';
 import ResultList from './ResultList';
-import StudentList from './StudentList';
 
 class App extends Component {
 
@@ -10,7 +9,6 @@ class App extends Component {
         <div>
           <SearchInput />
           <ResultList />
-          <StudentList />
         </div>
     );
   }

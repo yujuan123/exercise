@@ -2,7 +2,7 @@ import React from 'react'; // eslint-disable-line no-unused-vars
 import {render} from 'react-dom';
 import App from './components/App';
 import resultList from './reducers';
-import {createStore, applyMiddleware, compose} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import getStudentMiddleware from './middlewares/getStudentMiddleware';
 
@@ -12,7 +12,7 @@ const store = createStore(
 );
 
 store.dispatch({
-  type: "INIT"
+  type: 'INIT'
 });
 
 render(

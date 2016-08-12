@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
 import { connect } from 'react-redux';
 
 class ResultList extends Component {
@@ -23,12 +23,12 @@ class ResultList extends Component {
                     <td>{v.name}</td>
                     <td>{v.price}</td>
                   </tr>
-              )
+              );
             })
           }
           </tbody>
         </table>
-    )
+    );
   }
 }
 
@@ -39,15 +39,15 @@ const mapStateToProps = (state)=> ({
 const mapDispatchToProps = (dispatch)=> ({
   selectLine: (id)=> {
     dispatch({
-      type: "SELECT_LINE",
+      type: 'SELECT_LINE',
       id
-    })
+    });
   }
 });
 
-ResultList = connect(
+const ResultListClz = connect(
     mapStateToProps,
     mapDispatchToProps
 )(ResultList);
 
-export default ResultList
+export default ResultListClz;

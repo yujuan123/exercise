@@ -3,30 +3,24 @@ import request from 'superagent';
 const getStudentMiddleware = ()=> {
   return (next)=> {
     return (action)=> {
-      if(!action.type) {
 
-      }
-
-      if(action.type !== 'INIT') {
+      if(!action.type || action.type !== 'INIT') {
         return next(action);
-
       }
 
       next({
-        type: "PENDDING"
+        type: 'PENDDING'
       });
 
       return request.get('/demo')
           .end((err, res)=> {
             next({
-              type: "READY",
+              type: 'READY',
               data: res.body
-            })
+            });
           });
     };
-
-
-  }
+  };
 };
 
 export default getStudentMiddleware;

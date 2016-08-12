@@ -28,7 +28,7 @@ app.get('/demo', (res, req)=> {
   Student.find()
       .exec((err, data)=> {
         req.send(data);
-      })
+      });
 });
 
 app.listen(3000, function() {
