@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class ResultList extends Component {
   render() {
-    let result = [{
-      name: 'aaa',
-      price: 100
-    }, {
-      name: 'abc',
-      price: 99
-    }];
+    let {result} = this.props;
+    
     return (
         <table className="table table-striped">
           <thead>
@@ -35,5 +31,11 @@ class ResultList extends Component {
     )
   }
 }
+
+const mapStateToProps = (state)=> (state);
+
+ResultList = connect(
+    mapStateToProps
+)(ResultList);
 
 export default ResultList
