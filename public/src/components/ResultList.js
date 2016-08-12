@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 
 class ResultList extends Component {
   render() {
+    let result = [{
+      name: 'aaa',
+      price: 100
+    }, {
+      name: 'abc',
+      price: 99
+    }];
     return (
         <table className="table table-striped">
           <thead>
@@ -12,16 +19,17 @@ class ResultList extends Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>aaa</td>
-              <td>100.00</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>abc</td>
-              <td>104.00</td>
-            </tr>
+          {
+            result.map((v, k)=> {
+              return (
+                  <tr key={k}>
+                    <td>{k+1}</td>
+                    <td>{v.name}</td>
+                    <td>{v.price}</td>
+                  </tr>
+              )
+            })
+          }
           </tbody>
         </table>
     )
