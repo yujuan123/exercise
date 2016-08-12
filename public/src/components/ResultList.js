@@ -6,28 +6,31 @@ class ResultList extends Component {
     let {result} = this.props;
     
     return (
-        <table className="table table-striped">
-          <thead>
+        <div className="col-sm-8 col-sm-offset-2">
+          <table className="table table-striped">
+            <thead>
             <tr>
               <th>#</th>
               <th>name</th>
               <th>price</th>
             </tr>
-          </thead>
-          <tbody>
-          {
-            result.map((v, k)=> {
-              return (
-                  <tr key={k}>
-                    <td>{k+1}</td>
-                    <td>{v.name}</td>
-                    <td>{v.price}</td>
-                  </tr>
-              );
-            })
-          }
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+            {
+              result.map((v, k)=> {
+                return (
+                    <tr key={k}>
+                      <td>{k+1}</td>
+                      <td>{v.name}</td>
+                      <td>{v.price}</td>
+                    </tr>
+                );
+              })
+            }
+            </tbody>
+          </table>
+        </div>
+
     );
   }
 }

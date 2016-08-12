@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
-import SearchInput from './SearchInput';
+import AddTodo from '../container/AddTodo';
 import ResultList from './ResultList';
 
 class App extends Component {
@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
         <div>
-          <SearchInput />
+          <AddTodo />
           <ResultList />
         </div>
     );
