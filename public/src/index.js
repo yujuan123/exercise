@@ -4,16 +4,12 @@ import App from './components/App';
 import resultList from './reducers';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
-import getStudentMiddleware from './middlewares/getStudentMiddleware';
+import todoRequestMiddleware from './middlewares/todoRequestMiddleware';
 
 const store = createStore(
     resultList,
-    applyMiddleware(getStudentMiddleware)
+    applyMiddleware(todoRequestMiddleware)
 );
-
-store.dispatch({
-  type: 'INIT'
-});
 
 render(
     <Provider store={store}>
