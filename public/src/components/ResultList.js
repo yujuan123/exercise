@@ -32,10 +32,22 @@ class ResultList extends Component {
   }
 }
 
-const mapStateToProps = (state)=> (state);
+const mapStateToProps = (state)=> ({
+  result: state.result
+});
+
+const mapDispatchToProps = (dispatch)=> ({
+  selectLine: (id)=> {
+    dispatch({
+      type: "SELECT_LINE",
+      id
+    })
+  }
+});
 
 ResultList = connect(
-    mapStateToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(ResultList);
 
 export default ResultList
