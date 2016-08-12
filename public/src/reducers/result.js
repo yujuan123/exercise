@@ -1,21 +1,12 @@
-let defaultResult = [{
-  id: 1,
-  name: 'aaa',
-  price: 100
-}, {
-  id: 2,
-  name: 'abc',
-  price: 99
-}, {
-  id: 3,
-  name: 'zzz',
-  price: 888
-}];
-
-let count = 4;
+import request from 'superagent';
 
 const result = (state=[], action)=> {
   switch(action.type) {
+    case "READY":
+      return action.data;
+    case "INIT":
+      return [];
+
     case "SELECT_LINE":
       return state.concat({
         id: count++,
@@ -24,7 +15,7 @@ const result = (state=[], action)=> {
       });
   }
   
-  return defaultResult;
+  return state;
 };
 
 export default result;
