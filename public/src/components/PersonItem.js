@@ -4,7 +4,6 @@ class PersonItem extends Component {
   render() {
     let {name, image} = this.props
     return (
-
         <div className="text-center col-xs-3">
           <a className="text-center" href="#" className="thumbnail">
             <img src={image} alt="..."/>

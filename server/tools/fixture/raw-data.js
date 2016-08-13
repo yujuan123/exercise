@@ -8,12 +8,15 @@ export default {
   }],
   Person: [{
     name: '韩亦乐',
-    image: 'image/01.jpg'
+    image: 'images/01.jpg'
   }, {
     name: '鱼娟',
-    image: 'image/02.jpg'
+    image: 'images/02.jpg'
   }, {
     name: '段雪',
-    image: 'image/03.jpg'
+    image: 'images/03.jpg'
+  }, {
+    name: '崔倩',
+    image: 'images/02.jpg'
   }]
 };

@@ -3,22 +3,13 @@ import PersonItem from './PersonItem';
 
 class People extends Component {
   render() {
-    let list = [{
-      name: '韩亦乐',
-      image: 'images/01.jpg'
-    }, {
-      name: '鱼娟',
-      image: 'images/02.jpg'
-    }, {
-      name: '段雪',
-      image: 'images/03.jpg'
-    }];
-
+    let people = this.props.people;
+    people = [];
     return (
         <div className="row">
           {
-            list.map((v, k)=> (
-                <PersonItem key={k}  name={v.name} image={v.image} />
+            people.map((v)=> (
+                <PersonItem key={v._id}  name={v.name} image={v.image} />
             ))
           }
         </div>
