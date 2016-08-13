@@ -9,6 +9,27 @@ router.get('/', (req, res)=> {
   });
 });
 
+router.get('/:id', (req, res)=> {
+  Todo.findOne({
+    _id: req.params.id
+  }, (err, data)=> {
+    res.send(data);
+  });
+});
+
+router.put('/:id', (req, res)=> {
+  Todo.update({
+    _id: req.params.id
+  }, {
+    text: req.body.text
+  }, (err, data)=> {
+    res.send({
+      error: err,
+      data
+    });
+  });
+});
+
 router.post('/', (req, res, next)=> {
   new Todo({
     text: req.body.text
