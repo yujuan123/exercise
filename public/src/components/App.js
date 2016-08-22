@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
-import AddTodo from '../container/AddTodo';
+import AddTodo from '../containers/AddTodo';
 import ResultList from './ResultList';
-import PeopleList from '../container/PeopleList';
+import PeopleList from '../containers/PeopleList';
 
 class App extends Component {
 
