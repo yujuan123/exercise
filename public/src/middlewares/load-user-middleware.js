@@ -5,7 +5,7 @@ import request from 'superagent';
 const userLoadedMiddleware = store=>next=>action=> {
   switch (action.type) {
     case 'INIT':
-      request.get('/')
+      request.get('/all')
           .end((err,res)=>{
             next({
               type: 'USER_LOADED',

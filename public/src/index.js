@@ -4,10 +4,11 @@ import App from './components/App';
 import resultList from './reducers';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
-
+/*Middleware*/
+import userLoadedMiddleware from './middlewares/load-user-middleware';
 const store = createStore(
     resultList,
-    applyMiddleware()
+    applyMiddleware(userLoadedMiddleware)
 );
 
 store.dispatch({
@@ -18,5 +19,5 @@ render(
     <Provider store={store}>
       <App/>
     </Provider>,
-  document.getElementById('app')
+    document.getElementById('app')
 );

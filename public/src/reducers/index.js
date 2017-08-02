@@ -1,10 +1,8 @@
-import { combineReducers } from 'redux';
-import result from './result';
-import people from './people';
+import {combineReducers} from 'redux';
+import userLoaded from './user-loaded';
 
 const resultList = combineReducers({
-  result,
-  people
+  userLoaded
 });
 
 export default resultList;
