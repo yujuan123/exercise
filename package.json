@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jasmine",
     "start": "babel-node app.js",
-    "webpack": "webpack",
+    "webpack": "webpack -d --watch",
     "wpw": "webpack -w",
     "coverage": "istanbul cover jasmine",
     "eslint": "eslint app.js server/** public/src/**",
@@ -41,6 +41,7 @@
     "istanbul": "^1.0.0-alpha.2",
     "jasmine": "^2.4.1",
     "mysql": "^2.14.1",
+    "nodemon": "^1.11.0",
     "style-loader": "^0.13.1",
     "supertest": "^2.0.0",
     "url-loader": "^0.5.7",
