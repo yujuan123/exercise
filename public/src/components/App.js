@@ -1,14 +1,17 @@
 import React, {Component} from 'react'; // eslint-disable-line no-unused-vars
 import {connect} from 'react-redux';
-import {loadAllUser} from '../actions/index';
+import { addUserInfo,search} from '../actions/index';
 import UserItem from './UserItem';
 class App extends Component {
-  componentDidMount() {
-    this.props.loadAllUser();
-  }
-
   addClick() {
-    const div = document.getElementsByClassName("popup")[0];
+    this.refs.username.value = "";
+    this.refs.name.value = "";
+    this.refs.age.value = "";
+    this.refs.sex.value = "";
+    this.refs.phone.value = "";
+    this.refs.email.value = "";
+    this.refs.note.value = "";
+    const div = document.getElementById("addPopup");
     div.style.display = "block";
   }
 
@@ -29,27 +32,34 @@ class App extends Component {
       email,
       note
     });
-    const div = document.getElementsByClassName("popup")[0];
+    const div = document.getElementById("addPopup");
     div.style.display = "none";
   }
 
   cancel() {
-    const div = document.getElementsByClassName("popup")[0];
+    const div = document.getElementById("addPopup");
     div.style.display = "none";
   }
 
+  search() {
+    //获取搜索内容
+    let username = this.refs.search.value.trim();
+    this.props.search({username});
+  }
+
+  
   render() {
     let users = this.props.userLoaded;
     return (
         <div className="main">
 
           <div className="search">
-            <input id="add" className="btn-info" type="button" value="添加" onClick={this.addClick}/>
-            <input id="searchText" type="text"/>
-            <input id="search" className="btn-info" type="button" value="搜索"/>
+            <input id="add" className="btn-info" type="button" value="添加" onClick={this.addClick.bind(this)}/>
+            <input id="searchText" ref="search" type="text"/>
+            <input id="search" className="btn-info" type="button" value="搜索" onClick={this.search.bind(this)}/>
           </div>
 
-          <table className="table table-hover">
+          <table className="table ">
             <thead>
             <tr>
               <th>编号</th>
@@ -60,22 +70,24 @@ class App extends Component {
               <th>移动电话</th>
               <th>电子邮件</th>
               <th>备注</th>
+              <th>操作</th>
             </tr>
             </thead>
             <tbody>
             {
               users.map((v, k)=> {
-                return <UserItem id={v.id} username={v.username}
-                name={v.name} age={v.age} sex={v.sex} phone={v.phone} email={v.email} note={v.note}/>
+                return <UserItem key={k} id={v.id} username={v.username}
+                                 name={v.name} age={v.age} sex={v.sex} phone={v.phone} email={v.email} note={v.note}/>
               })
             }
             </tbody>
           </table>
 
-          <div className="popup">
+          <div className="popup" id="addPopup">
             <div className="window">
               <table>
                 <caption>添加用户</caption>
+                <tbody>
                 <tr>
                   <th>用户名：</th>
                   <td><input ref="username" type="text"/></td>
@@ -104,19 +116,26 @@ class App extends Component {
                   <th>备注：</th>
                   <td><input ref="note" type="text"/></td>
                 </tr>
+                </tbody>
               </table>
               <button className="btn-info" onClick={this.confirm.bind(this)}>确定</button>
               <button className="btn-danger" onClick={this.cancel.bind(this)}>取消</button>
             </div>
           </div>
+          
         </div>
     );
   }
 }
-const mapStateToProps = (state) =>(state);
+const mapStateToProps = (state) => {
+  return {userLoaded: state.userLoaded}
+};
 const mapDispatchToProps = (dispatch)=>({
-  loadAllUser: ()=> {
-    dispatch(loadAllUser());
+  addUserInfo: (data)=> {
+    dispatch(addUserInfo(data));
+  },
+  search: (username)=>{
+    dispatch(search(username));
   }
 
 });
