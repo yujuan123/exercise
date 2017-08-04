@@ -3,7 +3,7 @@ import mysql from 'mysql';
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'hhxx',//自己的密码
+  password: '',//自己的密码
   database: 'user'//自己创建的数据库名:user数据库里的User
 });
 
