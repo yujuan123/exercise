@@ -25,7 +25,7 @@ router.post('/add-user', (req, res)=> {
     if (err) {
       throw err;
     }
-    res.send("插入success");
+    res.send("insert success");
   })
 });
 
@@ -35,7 +35,7 @@ router.post('/update-user', (req, res)=> {
     if (err) {
       throw  err;
     }
-    res.send("更新成功");
+    res.send("update success");
   })
 });
 /*查找用户:根据用户名查找*/

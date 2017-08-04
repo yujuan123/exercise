@@ -1,6 +1,6 @@
 import React, {Component} from 'react'; // eslint-disable-line no-unused-vars
 import {connect} from 'react-redux';
-import { addUserInfo,search} from '../actions/index';
+import {addUserInfo, search} from '../actions/index';
 import UserItem from './UserItem';
 class App extends Component {
   addClick() {
@@ -19,6 +19,9 @@ class App extends Component {
     let username = this.refs.username.value.trim();
     let name = this.refs.name.value.trim();
     let age = this.refs.age.value.trim();
+    if(!/^(1[89]|[2-9]\d|100)$/.test(age)) {
+      console.log("不在18~100之间");
+    }
     let sex = this.refs.sex.value.trim();
     let phone = this.refs.phone.value.trim();
     let email = this.refs.email.value.trim();
@@ -47,7 +50,7 @@ class App extends Component {
     this.props.search({username});
   }
 
-  
+
   render() {
     let users = this.props.userLoaded;
     return (
@@ -59,7 +62,7 @@ class App extends Component {
             <input id="search" className="btn-info" type="button" value="搜索" onClick={this.search.bind(this)}/>
           </div>
 
-          <table className="table ">
+          <table className="table table-hover">
             <thead>
             <tr>
               <th>编号</th>
@@ -98,11 +101,17 @@ class App extends Component {
                 </tr>
                 <tr>
                   <th>年龄：</th>
-                  <td><input ref="age" type="text"/></td>
+                  <td><input ref="age" type="text" placeholder="18～100之间"/></td>
                 </tr>
                 <tr>
                   <th>性别：</th>
-                  <td><input ref="sex" type="text"/></td>
+                  <td>
+                    <select ref="sex">
+                      <option value="">--请选择性别--</option>
+                      <option value="男">男</option>
+                      <option value="女">女</option>
+                    </select>
+                  </td>
                 </tr>
                 <tr>
                   <th>移动电话：</th>
@@ -122,7 +131,7 @@ class App extends Component {
               <button className="btn-danger" onClick={this.cancel.bind(this)}>取消</button>
             </div>
           </div>
-          
+
         </div>
     );
   }
@@ -134,7 +143,7 @@ const mapDispatchToProps = (dispatch)=>({
   addUserInfo: (data)=> {
     dispatch(addUserInfo(data));
   },
-  search: (username)=>{
+  search: (username)=> {
     dispatch(search(username));
   }
 
