@@ -19,9 +19,6 @@ class App extends Component {
     let username = this.refs.username.value.trim();
     let name = this.refs.name.value.trim();
     let age = this.refs.age.value.trim();
-    if(!/^(1[89]|[2-9]\d|100)$/.test(age)) {
-      console.log("不在18~100之间");
-    }
     let sex = this.refs.sex.value.trim();
     let phone = this.refs.phone.value.trim();
     let email = this.refs.email.value.trim();
